@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:300&display=swap");
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.webgl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  outline: none;
+}
+
+
+#designerDiv {
+  height: 5vh;
+  min-width: 20vw;
+  position: fixed;
+  bottom: 4px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#glass {
+  height: 100%;
+  width: 100%;
+  filter: blur(2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#designerName {
+  color: whitesmoke;
+  font-family: 'Rajdhani', sans-serif;
+  position: absolute;
+  z-index: 5;
+  font-size: larger;
+  filter: blur(0px);
+}
+
+@media (max-width: 640px) {
+  #designerDiv {
+    width: 40vw;
+  }
+
+  #designerName {
+    font-size: small;
+  }
+}
