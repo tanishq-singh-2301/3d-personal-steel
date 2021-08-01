@@ -1,7 +1,7 @@
 const db = require('../database/connection');
 
 exports.home = async (req, res) => {
-    res.send('Working');
+    res.json({ 'Working': true });
 };
 
 exports.addReview = async (req, res) => {

@@ -13,31 +13,30 @@ body {
 }
 
 .webgl {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  width: 100vw;
+  height: 100vh;
   outline: none;
 }
 
-
-#designerDiv {
-  height: 5vh;
-  min-width: 20vw;
-  position: fixed;
-  bottom: 4px;
-  right: 10px;
+.center{
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#glass {
+#footer {
+  height: 5.5vh;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+}
+
+#designerDivNameBox{
   height: 100%;
-  width: 100%;
-  filter: blur(2px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  min-width: 300px;
 }
 
 #designerName {
@@ -46,15 +45,26 @@ body {
   position: absolute;
   z-index: 5;
   font-size: larger;
-  filter: blur(0px);
 }
 
-@media (max-width: 640px) {
-  #designerDiv {
-    width: 40vw;
-  }
+#header{
+  height: 5.5vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+}
 
-  #designerName {
-    font-size: small;
-  }
+#review-box{
+  height: 100%;
+  min-width: 100px;
+  position: absolute;
+  right: 0;
+}
+
+#review-span{
+  color: whitesmoke;
+  font-family: 'Rajdhani', sans-serif;
+  position: absolute;
+  z-index: 5;
+  font-size: large;
 }

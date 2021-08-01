@@ -22,7 +22,7 @@ class Home extends React.Component {
     scene.add(camera)
 
     const text = new THREE.Mesh(
-      new THREE.TextBufferGeometry("B L A N K!", {
+      new THREE.TextBufferGeometry("3d-threejs", {
         font: new THREE.FontLoader().parse(font1),
         size: 1,
         height: 0.7,
@@ -37,7 +37,7 @@ class Home extends React.Component {
         matcap: textureLoader.load(texture1),
       })
     );
-    // text.material.wireframe = true;
+    text.material.wireframe = true;
     text.geometry.center();
     scene.add(text);
 
@@ -60,11 +60,7 @@ class Home extends React.Component {
       parameters.height = window.innerHeight
     });
 
-    // const clock = new THREE.Clock();
-
     const animate = function () {
-      // const elaspedTime = clock.getElapsedTime();
-      // text.rotation.set(0, 0.1 * elaspedTime, 0);
       orbitControls.update();
 
       renderer.setSize(parameters.width, parameters.height);
@@ -82,10 +78,16 @@ class Home extends React.Component {
     return (
       <>
         <canvas className="webgl" />
-        <div id="designerDiv" onClick={() => window.location.href = "https://instagram.com/tanishq.singh.2301/"}>
-          <div id="glass"></div>
-          <span id="designerName">Designed by : TANISHQ SINGH</span>
-        </div>
+        <header id="header" className="center">
+          <div id="review-box" className="center" onClick={() => window.location.href = "http://localhost:3000/review/homepage"}>
+            <span id="review-span">review</span>
+          </div>
+        </header>
+        <footer id="footer" className="center">
+          <div id="designerDivNameBox" className="center" onClick={() => window.location.href = "https://instagram.com/tanishq.singh.2301/"}>
+            <span id="designerName">Designed by : TANISHQ SINGH</span>
+          </div>
+        </footer>
       </>
     )
   }

@@ -7,9 +7,8 @@ import Light from './views/Light';
 import HauntedHouse from './views/HauntedHouse';
 import Points from './views/Points';
 import GalaxyGenerator from './views/GalaxyGenerator';
+import Review from './views/Review';
 import { BrowserRouter, Route } from 'react-router-dom';
-
-// const db = require("./server/database/connection");
 
 ReactDOM.render(
   <React.StrictMode>
@@ -20,6 +19,7 @@ ReactDOM.render(
       <Route path="/hauntedhouse"><HauntedHouse /></Route>
       <Route path="/points"><Points /></Route>
       <Route path="/galaxygenerator"><GalaxyGenerator /></Route>
+      <Route path="/review/:page" component={Review} />
     </BrowserRouter>,
   </React.StrictMode>,
   document.getElementById('root')
