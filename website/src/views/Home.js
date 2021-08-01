@@ -79,7 +79,7 @@ class Home extends React.Component {
       <>
         <canvas className="webgl" />
         <header id="header" className="center">
-          <div id="review-box" className="center" onClick={() => window.location.href = "http://localhost:3000/review/homepage"}>
+          <div id="review-box" className="center" onClick={() => window.location.href = "https://3d-threejs.vercel.app/review/homepage"}>
             <span id="review-span">review</span>
           </div>
         </header>

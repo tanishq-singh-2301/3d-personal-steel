@@ -8,17 +8,22 @@ const Review = (props) => {
     const date = new Date().toLocaleDateString().split('/');
 
     const addreview = async (props) => {
+        const sendBtn = document.querySelector('#send-btn');
         const name = await document.querySelector("#review-name").value;
         const review = await document.querySelector("#review-body").value;
 
+        sendBtn.innerHTML = " WAIT ";
         if (name.length <= 5) {
             setSendableData({ sendable: false, error: "Name too short.👻" });
+            sendBtn.innerHTML = "SUBMIT";
             return null;
         } else {
             if (review.length <= 10) {
                 setSendableData({ sendable: false, error: "Review too short.🐒" });
+                sendBtn.innerHTML = "SUBMIT";
                 return null;
             } else if (name.length >= 5 && review.length >= 10) {
+                sendBtn.innerHTML = " WAIT ";
                 await fetch(`https://3d-threejs-server.vercel.app/api/addreview/${props.match.params.page}`, {
                     method: "POST",
                     headers: {
@@ -39,6 +44,7 @@ const Review = (props) => {
                 return true;
             } else {
                 setSendableData({ sendable: false, error: "Name and review are short.👻" });
+                sendBtn.innerHTML = "SUBMIT";
                 return null;
             }
         }
@@ -79,7 +85,7 @@ const Review = (props) => {
                                 {
                                     send ?
                                         <span className="review-form-extra-text">&ensp;DONE&ensp;</span> :
-                                        <span className="review-form-extra-text" onClick={() => addreview(props)}>SUBMIT</span>
+                                        <span className="review-form-extra-text" id="send-btn" onClick={() => addreview(props)}>SUBMIT</span>
                                 }
                             </aside>
                         </footer>
