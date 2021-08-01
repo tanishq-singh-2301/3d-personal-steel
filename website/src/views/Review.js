@@ -40,8 +40,10 @@ const Review = (props) => {
                     .then(res => res.json())
                     .then(res => {
                         setSend(true);
+                        return true;
                     });
-                return true;
+                setSendableData({ sendable: false, error: "Error please send again.?🐒" });
+                return false;
             } else {
                 setSendableData({ sendable: false, error: "Name and review are short.👻" });
                 sendBtn.innerHTML = "SUBMIT";

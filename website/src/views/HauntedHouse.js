@@ -298,10 +298,16 @@ class HauntedHouse extends React.Component {
         return (
             <>
                 <canvas className="webgl" />
-                <div id="designerDiv" onClick={() => window.location.href = "https://instagram.com/tanishq.singh.2301/"}>
-                    <div id="glass"></div>
-                    <span id="designerName">Designed by : TANISHQ SINGH</span>
-                </div>
+                <header id="header" className="center">
+                    <div id="review-box" className="center" onClick={() => window.location.href = "https://3d-threejs.vercel.app/review/hauntedhouse"}>
+                        <span id="review-span">review</span>
+                    </div>
+                </header>
+                <footer id="footer" className="center">
+                    <div id="designerDivNameBox" className="center" onClick={() => window.location.href = "https://instagram.com/tanishq.singh.2301/"}>
+                        <span id="designerName">Designed by : TANISHQ SINGH</span>
+                    </div>
+                </footer>
             </>
         )
     }
