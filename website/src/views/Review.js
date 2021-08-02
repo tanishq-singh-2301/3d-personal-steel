@@ -6,8 +6,8 @@ const Review = (props) => {
     const [sendableData, setSendableData] = useState({ sendable: true, error: null });
     const [ip, setIp] = useState({ fetched: false, ip: null });
 
-    useEffect(async () => {
-        await fetch(process.env.REACT_APP_IP_URL)
+    useEffect(() => {
+        fetch(process.env.REACT_APP_IP_URL)
             .then(res => res.json())
             .then(res => setIp({ fetched: true, ip: res }))
             .catch(err => setIp({ fetched: false, ip: null }));
