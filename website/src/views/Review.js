@@ -1,9 +1,18 @@
 import React, { useState } from "react";
+// import * as axios from 'axios';
 import './styles/review.css';
 
 const Review = (props) => {
     const [send, setSend] = useState(false);
     const [sendableData, setSendableData] = useState({ sendable: true, error: null });
+    // const [ipAdd, setIpAdd] = useState(null);
+
+    // useEffect(async () => {
+    //     await fetch("https://ipinfo.io/")
+    //         .then(res => {
+    //             console.log(res)
+    //         })
+    // }, [])
 
     const date = new Date().toLocaleDateString().split('/');
 
