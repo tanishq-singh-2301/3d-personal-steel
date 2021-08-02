@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-// import * as axios from 'axios';
+import React, { useState, useEffect } from "react";
 import './styles/review.css';
 
 const Review = (props) => {
     const [send, setSend] = useState(false);
     const [sendableData, setSendableData] = useState({ sendable: true, error: null });
-    // const [ipAdd, setIpAdd] = useState(null);
+    const [ip, setIp] = useState({ fetched: false, ip: null });
 
-    // useEffect(async () => {
-    //     await fetch("https://ipinfo.io/")
-    //         .then(res => {
-    //             console.log(res)
-    //         })
-    // }, [])
+    useEffect(async () => {
+        await fetch(process.env.REACT_APP_IP_URL)
+            .then(res => res.json())
+            .then(res => setIp({ fetched: true, ip: res }))
+            .catch(err => setIp({ fetched: false, ip: null }));
+
+    }, []);
 
     const date = new Date().toLocaleDateString().split('/');
 
@@ -40,7 +40,7 @@ const Review = (props) => {
                     },
                     body: JSON.stringify({
                         "user_name": name,
-                        "ip_address": "123.123.123",
+                        "ip": ip,
                         "time": new Date().toLocaleTimeString(),
                         "date": new Date().toLocaleDateString(),
                         "review": review
