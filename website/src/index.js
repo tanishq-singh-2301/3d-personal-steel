@@ -9,18 +9,20 @@ import HauntedHouse from './views/HauntedHouse';
 import Points from './views/Points';
 import GalaxyGenerator from './views/GalaxyGenerator';
 import Review from './views/Review';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Route exact path="/"><Home db="db" /></Route>
-      <Route path="/name"><Name /></Route>
-      <Route path="/light"><Light /></Route>
-      <Route path="/hauntedhouse"><HauntedHouse /></Route>
-      <Route path="/points"><Points /></Route>
-      <Route path="/galaxygenerator"><GalaxyGenerator /></Route>
-      <Route path="/review/:page" component={Review} />
+      <Switch>
+        <Route exact path="/"><Home db="db" /></Route>
+        <Route path="/name"><Name /></Route>
+        <Route path="/light"><Light /></Route>
+        <Route path="/hauntedhouse"><HauntedHouse /></Route>
+        <Route path="/points"><Points /></Route>
+        <Route path="/galaxygenerator"><GalaxyGenerator /></Route>
+        <Route path="/review/:page" component={Review} />
+      </Switch>
     </BrowserRouter>,
   </React.StrictMode>,
   document.getElementById('root')
